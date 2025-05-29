@@ -16,7 +16,9 @@
 
 set -e
 
-git checkout main
+git remote set-branches origin "*"
+git fetch origin
+git checkout -b main origin/main
 
 if [ -z "$PROJECT_ID" ]; then
   echo "❌ Error: No PROJECT_ID variable set. Please set it and re-run."
